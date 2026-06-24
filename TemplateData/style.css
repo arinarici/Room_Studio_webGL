@@ -1,96 +1,111 @@
 body { padding: 0; margin: 0 }
-#unity-hero { position: relative; width: 100%; height: 640px; overflow: hidden; background: transparent }
-#unity-container { position: absolute; inset: 0; width: 100%; height: 100% }
-#unity-canvas { width: 100%; height: 100%; display: block; background: transparent }
-/* ---- Sahte satış sitesi: tasarım token'ları ---- */
+
+/* ---- Tasarım token'ları (vol-ari tarzı minimal palet) ---- */
 :root {
-  --ink: #1c1b18;
-  --paper: #ece7dc;
+  --ink: #1a1a17;
+  --paper: #fcfbfa;
   --surface: #ffffff;
-  --accent: #2f6f62;
-  --accent-warm: #c9a227;
-  --muted: #6b6862;
-  --line: rgba(28, 27, 24, 0.12);
+  --accent: #1a1a17;
+  --accent-warm: #b08d3e;
+  --muted: #8a857c;
+  --line: rgba(26, 26, 23, 0.1);
 }
 
-/* Hero üzerindeki nav */
-.site-nav { position: absolute; top: 0; left: 0; right: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0)) }
-.nav-logo { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; color: #fff; letter-spacing: 0.04em }
-.nav-logo.dark { color: #fff }
-.nav-links { display: flex; gap: 28px }
-.nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 14px; font-weight: 500 }
-.nav-links a:hover { color: #fff }
-.nav-cta { background: var(--accent-warm); color: var(--ink); padding: 9px 18px; border-radius: 4px; text-decoration: none; font-size: 14px; font-weight: 600 }
+html { scroll-behavior: smooth }
+body { font-family: 'Inter', arial, sans-serif; background: var(--paper); color: var(--ink) }
+
+/* Üst navigasyon */
+.site-nav { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; padding: 22px 48px; background: var(--paper); border-bottom: 1px solid var(--line) }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 600; color: var(--ink); letter-spacing: 0.08em }
+.nav-links { display: flex; gap: 32px }
+.nav-links a { color: var(--ink); text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.02em; opacity: 0.7 }
+.nav-links a:hover { opacity: 1 }
+.nav-cta { background: var(--ink); color: var(--paper); padding: 10px 20px; border-radius: 2px; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 0.02em }
 
 /* Site içerik genel */
-#site-content { font-family: 'Inter', arial, sans-serif; background: var(--paper); color: var(--ink) }
-#site-content .eyebrow { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 8px }
-#site-content h2 { font-family: 'Fraunces', serif; font-size: 34px; font-weight: 600; margin: 0 0 36px; max-width: 640px }
-#site-content section { padding: 96px 48px; max-width: 1140px; margin: 0 auto }
+#site-content .eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-warm); font-weight: 600; margin: 0 0 14px }
+#site-content h2 { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 600; margin: 0 0 40px; max-width: 640px; letter-spacing: -0.01em }
+#site-content section { padding: 120px 48px; max-width: 1180px; margin: 0 auto }
+
+/* Hero — küçük WebGL önizlemesi + metin */
+.hero { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; padding-top: 96px; padding-bottom: 96px }
+.hero-text { max-width: 460px }
+.hero-text h1 { font-family: 'Fraunces', serif; font-size: 44px; font-weight: 600; line-height: 1.15; margin: 0 0 20px; letter-spacing: -0.01em }
+.hero-text p { font-size: 15px; line-height: 1.7; color: var(--muted); margin: 0 0 32px }
+.hero-webgl { position: relative; width: 100%; aspect-ratio: 1/1; max-width: 520px; margin: 0 auto }
+#unity-container.unity-desktop { position: absolute; inset: 0; width: 100%; height: 100% }
+#unity-canvas { width: 100%; height: 100%; display: block; background: transparent }
 
 /* Özellikler */
 .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px }
-.feature-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 28px }
-.feature-mark { display: block; width: 32px; height: 32px; border-radius: 6px; background: var(--accent-warm); margin-bottom: 18px }
-.feature-card h3 { font-size: 17px; margin: 0 0 10px }
+.feature-card { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 32px }
+.feature-mark { display: block; width: 28px; height: 28px; border-radius: 50%; background: var(--accent-warm); margin-bottom: 22px }
+.feature-card h3 { font-size: 16px; margin: 0 0 10px; font-weight: 600 }
 .feature-card p { font-size: 14px; color: var(--muted); line-height: 1.6; margin: 0 }
 
 /* Vitrin */
-.showcase-row { display: flex; align-items: center; gap: 56px; margin-bottom: 72px }
+.showcase-row { display: flex; align-items: center; gap: 64px; margin-bottom: 80px }
 .showcase-row.reverse { flex-direction: row-reverse }
-.showcase-media { flex: 1; aspect-ratio: 4/3; border-radius: 8px; background: linear-gradient(135deg, var(--accent), #16332c) }
-.showcase-media.alt { background: linear-gradient(135deg, var(--accent-warm), #8a6a13) }
+.showcase-media { flex: 1; aspect-ratio: 4/3; border-radius: 4px; background: linear-gradient(135deg, #e9e4d8, #d8d1c0) }
+.showcase-media.alt { background: linear-gradient(135deg, #ece6da, #d6cdb8) }
 .showcase-text { flex: 1 }
-.showcase-text h2 { font-size: 28px; margin-bottom: 14px }
+.showcase-text h2 { font-size: 26px; margin-bottom: 16px }
 .showcase-text p { font-size: 15px; color: var(--muted); line-height: 1.7 }
 
 /* Fiyatlandırma */
 .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px }
-.price-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 32px; display: flex; flex-direction: column }
-.price-card.featured { border-color: var(--accent); box-shadow: 0 12px 32px rgba(28,27,24,0.08) }
-.price-card h3 { font-size: 16px; margin: 0 0 4px; color: var(--muted) }
-.price { font-family: 'Fraunces', serif; font-size: 32px; margin: 0 0 20px }
+.price-card { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 36px; display: flex; flex-direction: column }
+.price-card.featured { border-color: var(--ink); box-shadow: 0 16px 40px rgba(26,26,23,0.06) }
+.price-card h3 { font-size: 15px; margin: 0 0 6px; color: var(--muted); font-weight: 500 }
+.price { font-family: 'Fraunces', serif; font-size: 30px; margin: 0 0 24px }
 .price span { font-size: 14px; color: var(--muted); font-family: 'Inter', arial, sans-serif }
-.price-card ul { list-style: none; padding: 0; margin: 0 0 28px; flex: 1 }
-.price-card li { font-size: 14px; padding: 8px 0; border-top: 1px solid var(--line); color: var(--muted) }
+.price-card ul { list-style: none; padding: 0; margin: 0 0 32px; flex: 1 }
+.price-card li { font-size: 14px; padding: 10px 0; border-top: 1px solid var(--line); color: var(--muted) }
 .price-card li:first-child { border-top: none }
-.price-cta { display: inline-block; text-align: center; background: var(--accent); color: #fff; padding: 12px; border-radius: 5px; text-decoration: none; font-weight: 600; font-size: 14px }
+.price-cta { display: inline-block; text-align: center; background: var(--ink); color: var(--paper); padding: 13px 24px; border-radius: 2px; text-decoration: none; font-weight: 600; font-size: 13px; letter-spacing: 0.02em }
 .price-cta.outline { background: transparent; border: 1px solid var(--ink); color: var(--ink) }
 
 /* Yorumlar */
 .testimonials { background: var(--ink) }
 .testimonials .eyebrow { color: var(--accent-warm) }
-.testimonials h2 { color: #fff }
+.testimonials h2 { color: var(--paper) }
 .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px }
-.testimonials blockquote { margin: 0; padding: 24px; background: rgba(255,255,255,0.06); border-radius: 8px }
-.testimonials p { font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.85); margin: 0 0 14px }
+.testimonials blockquote { margin: 0; padding: 28px; background: rgba(255,255,255,0.04); border-radius: 4px }
+.testimonials p { font-size: 14px; line-height: 1.7; color: rgba(252,251,250,0.8); margin: 0 0 16px }
 .testimonials cite { font-size: 13px; color: var(--accent-warm) }
 
 /* Kapanış CTA */
 .final-cta { text-align: center; max-width: 560px }
-.final-cta h2 { margin: 0 auto 14px }
-.final-cta p { color: var(--muted); margin-bottom: 28px }
-.final-cta .price-cta { display: inline-block; padding: 14px 28px }
+.final-cta h2 { margin: 0 auto 16px }
+.final-cta p { color: var(--muted); margin-bottom: 32px }
+.final-cta .price-cta { display: inline-block; padding: 15px 30px }
 
 /* Footer */
-.site-footer { max-width: none; background: var(--ink); color: rgba(255,255,255,0.7); padding: 64px 48px 32px }
-.footer-grid { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.12) }
-.footer-grid h4 { font-size: 13px; color: #fff; margin: 0 0 14px }
-.footer-grid a { display: block; color: rgba(255,255,255,0.65); text-decoration: none; font-size: 14px; margin-bottom: 8px }
-.copyright { max-width: 1140px; margin: 24px auto 0; font-size: 13px }
+.site-footer { max-width: none; background: var(--ink); color: rgba(252,251,250,0.65); padding: 72px 48px 36px }
+.footer-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; padding-bottom: 36px; border-bottom: 1px solid rgba(252,251,250,0.12) }
+.footer-grid h4 { font-size: 12px; color: var(--paper); margin: 0 0 16px; letter-spacing: 0.06em; text-transform: uppercase }
+.footer-grid a { display: block; color: rgba(252,251,250,0.6); text-decoration: none; font-size: 14px; margin-bottom: 10px }
+.copyright { max-width: 1180px; margin: 28px auto 0; font-size: 12px }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding-top: 56px }
+  .hero-text { max-width: none; text-align: center; margin: 0 auto }
+  .hero-webgl { max-width: 360px }
+}
 
 @media (max-width: 720px) {
   .features-grid, .pricing-grid, .testimonial-grid, .footer-grid { grid-template-columns: 1fr }
   .showcase-row, .showcase-row.reverse { flex-direction: column }
   .nav-links { display: none }
-  #site-content section { padding: 64px 24px }
+  #site-content section { padding: 72px 24px }
 }
-#unity-loading-bar { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: none; width: 220px; text-align: center }
-#unity-loading-bar::after { content: "Store is opening..."; display: block; margin-top: 16px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; font-size: 12px; letter-spacing: 0.08em; color: rgba(255,255,255,0.55) }
-#unity-logo { width: 154px; height: 130px; background: url('unity-logo-dark.png') no-repeat center; display: none }
-#unity-progress-bar-empty { width: 220px; height: 8px; margin: 0; background: rgba(255, 255, 255, 0.08); border-radius: 999px; overflow: hidden; box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5) }
-#unity-progress-bar-full { width: 0%; height: 100%; margin: 0; border-radius: 999px; background: linear-gradient(90deg, #4fd1c5, #8b5cf6, #4fd1c5); background-size: 200% 100%; animation: unity-progress-shimmer 1.6s linear infinite; transition: width 0.25s ease-out }
-@keyframes unity-progress-shimmer { 0% { background-position: 0% 0 } 100% { background-position: 200% 0 } }
+
+/* Unity yükleme arayüzü */
+#unity-loading-bar { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: none; width: 200px; text-align: center }
+#unity-loading-bar::after { content: "Yükleniyor..."; display: block; margin-top: 14px; font-family: 'Inter', arial, sans-serif; font-size: 11px; letter-spacing: 0.08em; color: var(--muted) }
+#unity-logo { width: 110px; height: 92px; background: url('unity-logo-dark.png') no-repeat center; background-size: contain; display: none }
+#unity-progress-bar-empty { width: 200px; height: 4px; margin: 0; background: rgba(26,26,23,0.08); border-radius: 999px; overflow: hidden }
+#unity-progress-bar-full { width: 0%; height: 100%; margin: 0; border-radius: 999px; background: var(--accent-warm); transition: width 0.25s ease-out }
 #unity-footer { position: relative; display: none }
 .unity-mobile #unity-footer { display: none }
 #unity-logo-title-footer { float:left; width: 102px; height: 38px; background: url('unity-logo-title-footer.png') no-repeat center }

@@ -10,35 +10,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   </head>
   <body>
-    <section id="unity-hero">
-      <nav class="site-nav">
-        <span class="nav-logo">ROOMSTUDIO</span>
-        <div class="nav-links">
-          <a href="#features">Özellikler</a>
-          <a href="#showcase">Vitrin</a>
-          <a href="#pricing">Fiyatlandırma</a>
-          <a href="#testimonials">Yorumlar</a>
-        </div>
-        <a href="#pricing" class="nav-cta">Demo İste</a>
-      </nav>
-      <div id="unity-container" class="unity-desktop">
-        <canvas id="unity-canvas" tabindex="-1"></canvas>
-        <div id="unity-loading-bar">
-          <div id="unity-logo"></div>
-          <div id="unity-progress-bar-empty">
-            <div id="unity-progress-bar-full"></div>
-          </div>
-        </div>
-        <div id="unity-warning"> </div>
-        <div id="unity-footer">
-          <div id="unity-logo-title-footer"></div>
-          <div id="unity-fullscreen-button"></div>
-          <div id="unity-build-title">presentation</div>
-        </div>
+    <nav class="site-nav">
+      <span class="nav-logo">ROOMSTUDIO</span>
+      <div class="nav-links">
+        <a href="#features">Özellikler</a>
+        <a href="#showcase">Vitrin</a>
+        <a href="#pricing">Fiyatlandırma</a>
+        <a href="#testimonials">Yorumlar</a>
       </div>
-    </section>
+      <a href="#pricing" class="nav-cta">Demo İste</a>
+    </nav>
 
     <main id="site-content">
+
+      <section class="hero" id="hero">
+        <div class="hero-text">
+          <p class="eyebrow">3D KONFİGÜRATÖR</p>
+          <h1>Mekanını gerçek zamanlı tasarla</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sağdaki önizlemeyi sürükleyip döndür, materyalleri ve ışıkları anında değiştir.</p>
+          <a href="#pricing" class="price-cta">Ücretsiz Demo İste</a>
+        </div>
+        <div class="hero-webgl">
+          <div id="unity-container" class="unity-desktop">
+            <canvas id="unity-canvas" tabindex="-1"></canvas>
+            <div id="unity-loading-bar">
+              <div id="unity-logo"></div>
+              <div id="unity-progress-bar-empty">
+                <div id="unity-progress-bar-full"></div>
+              </div>
+            </div>
+            <div id="unity-warning"> </div>
+            <div id="unity-footer">
+              <div id="unity-logo-title-footer"></div>
+              <div id="unity-fullscreen-button"></div>
+              <div id="unity-build-title">presentation</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section class="features" id="features">
         <p class="eyebrow">ÖZELLİKLER</p>
@@ -201,12 +210,12 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/project_test.loader.js";
+      var loaderUrl = buildUrl + "/Room_Studio_webGL.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/project_test.data",
-        frameworkUrl: buildUrl + "/project_test.framework.js",
-        codeUrl: buildUrl + "/project_test.wasm",
+        dataUrl: buildUrl + "/Room_Studio_webGL.data",
+        frameworkUrl: buildUrl + "/Room_Studio_webGL.framework.js",
+        codeUrl: buildUrl + "/Room_Studio_webGL.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "RoomStudio",
         productName: "presentation",

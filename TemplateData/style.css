@@ -2,7 +2,89 @@ body { padding: 0; margin: 0 }
 #unity-hero { position: relative; width: 100%; height: 640px; overflow: hidden; background: transparent }
 #unity-container { position: absolute; inset: 0; width: 100%; height: 100% }
 #unity-canvas { width: 100%; height: 100%; display: block; background: transparent }
-#site-content { padding: 40px 24px; font-family: arial, sans-serif }
+/* ---- Sahte satış sitesi: tasarım token'ları ---- */
+:root {
+  --ink: #1c1b18;
+  --paper: #ece7dc;
+  --surface: #ffffff;
+  --accent: #2f6f62;
+  --accent-warm: #c9a227;
+  --muted: #6b6862;
+  --line: rgba(28, 27, 24, 0.12);
+}
+
+/* Hero üzerindeki nav */
+.site-nav { position: absolute; top: 0; left: 0; right: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0)) }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; color: #fff; letter-spacing: 0.04em }
+.nav-logo.dark { color: #fff }
+.nav-links { display: flex; gap: 28px }
+.nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 14px; font-weight: 500 }
+.nav-links a:hover { color: #fff }
+.nav-cta { background: var(--accent-warm); color: var(--ink); padding: 9px 18px; border-radius: 4px; text-decoration: none; font-size: 14px; font-weight: 600 }
+
+/* Site içerik genel */
+#site-content { font-family: 'Inter', arial, sans-serif; background: var(--paper); color: var(--ink) }
+#site-content .eyebrow { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 8px }
+#site-content h2 { font-family: 'Fraunces', serif; font-size: 34px; font-weight: 600; margin: 0 0 36px; max-width: 640px }
+#site-content section { padding: 96px 48px; max-width: 1140px; margin: 0 auto }
+
+/* Özellikler */
+.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px }
+.feature-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 28px }
+.feature-mark { display: block; width: 32px; height: 32px; border-radius: 6px; background: var(--accent-warm); margin-bottom: 18px }
+.feature-card h3 { font-size: 17px; margin: 0 0 10px }
+.feature-card p { font-size: 14px; color: var(--muted); line-height: 1.6; margin: 0 }
+
+/* Vitrin */
+.showcase-row { display: flex; align-items: center; gap: 56px; margin-bottom: 72px }
+.showcase-row.reverse { flex-direction: row-reverse }
+.showcase-media { flex: 1; aspect-ratio: 4/3; border-radius: 8px; background: linear-gradient(135deg, var(--accent), #16332c) }
+.showcase-media.alt { background: linear-gradient(135deg, var(--accent-warm), #8a6a13) }
+.showcase-text { flex: 1 }
+.showcase-text h2 { font-size: 28px; margin-bottom: 14px }
+.showcase-text p { font-size: 15px; color: var(--muted); line-height: 1.7 }
+
+/* Fiyatlandırma */
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px }
+.price-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 32px; display: flex; flex-direction: column }
+.price-card.featured { border-color: var(--accent); box-shadow: 0 12px 32px rgba(28,27,24,0.08) }
+.price-card h3 { font-size: 16px; margin: 0 0 4px; color: var(--muted) }
+.price { font-family: 'Fraunces', serif; font-size: 32px; margin: 0 0 20px }
+.price span { font-size: 14px; color: var(--muted); font-family: 'Inter', arial, sans-serif }
+.price-card ul { list-style: none; padding: 0; margin: 0 0 28px; flex: 1 }
+.price-card li { font-size: 14px; padding: 8px 0; border-top: 1px solid var(--line); color: var(--muted) }
+.price-card li:first-child { border-top: none }
+.price-cta { display: inline-block; text-align: center; background: var(--accent); color: #fff; padding: 12px; border-radius: 5px; text-decoration: none; font-weight: 600; font-size: 14px }
+.price-cta.outline { background: transparent; border: 1px solid var(--ink); color: var(--ink) }
+
+/* Yorumlar */
+.testimonials { background: var(--ink) }
+.testimonials .eyebrow { color: var(--accent-warm) }
+.testimonials h2 { color: #fff }
+.testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px }
+.testimonials blockquote { margin: 0; padding: 24px; background: rgba(255,255,255,0.06); border-radius: 8px }
+.testimonials p { font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.85); margin: 0 0 14px }
+.testimonials cite { font-size: 13px; color: var(--accent-warm) }
+
+/* Kapanış CTA */
+.final-cta { text-align: center; max-width: 560px }
+.final-cta h2 { margin: 0 auto 14px }
+.final-cta p { color: var(--muted); margin-bottom: 28px }
+.final-cta .price-cta { display: inline-block; padding: 14px 28px }
+
+/* Footer */
+.site-footer { max-width: none; background: var(--ink); color: rgba(255,255,255,0.7); padding: 64px 48px 32px }
+.footer-grid { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.12) }
+.footer-grid h4 { font-size: 13px; color: #fff; margin: 0 0 14px }
+.footer-grid a { display: block; color: rgba(255,255,255,0.65); text-decoration: none; font-size: 14px; margin-bottom: 8px }
+.copyright { max-width: 1140px; margin: 24px auto 0; font-size: 13px }
+
+@media (max-width: 720px) {
+  .features-grid, .pricing-grid, .testimonial-grid, .footer-grid { grid-template-columns: 1fr }
+  .showcase-row, .showcase-row.reverse { flex-direction: column }
+  .nav-links { display: none }
+  #site-content section { padding: 64px 24px }
+}
 #unity-loading-bar { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: none; width: 220px; text-align: center }
 #unity-loading-bar::after { content: "Store is opening..."; display: block; margin-top: 16px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; font-size: 12px; letter-spacing: 0.08em; color: rgba(255,255,255,0.55) }
 #unity-logo { width: 154px; height: 130px; background: url('unity-logo-dark.png') no-repeat center; display: none }

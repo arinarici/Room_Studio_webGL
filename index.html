@@ -6,9 +6,21 @@
     <title>Unity Web Player | presentation</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   </head>
   <body>
     <section id="unity-hero">
+      <nav class="site-nav">
+        <span class="nav-logo">ROOMSTUDIO</span>
+        <div class="nav-links">
+          <a href="#features">Özellikler</a>
+          <a href="#showcase">Vitrin</a>
+          <a href="#pricing">Fiyatlandırma</a>
+          <a href="#testimonials">Yorumlar</a>
+        </div>
+        <a href="#pricing" class="nav-cta">Demo İste</a>
+      </nav>
       <div id="unity-container" class="unity-desktop">
         <canvas id="unity-canvas" tabindex="-1"></canvas>
         <div id="unity-loading-bar">
@@ -27,8 +39,138 @@
     </section>
 
     <main id="site-content">
-      <h1>Buraya normal site içeriğin gelecek</h1>
-      <p>Bu bölüm, yukarıdaki WebGL alanından tamamen bağımsız, normal HTML akışında. Scroll ettiğinde WebGL kısmı sabit kalmıyor (sayfayla beraber kayar), sadece yukarıdaki sınırlı alana hapsedilmiş durumda. İçeriğini buraya yazmaya başlayabilirsin.</p>
+
+      <section class="features" id="features">
+        <p class="eyebrow">ÖZELLİKLER</p>
+        <h2>Neden RoomStudio?</h2>
+        <div class="features-grid">
+          <article class="feature-card">
+            <span class="feature-mark"></span>
+            <h3>Gerçek Zamanlı Önizleme</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio praesent libero sit amet cursus.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-mark"></span>
+            <h3>Sınırsız Materyal Kütüphanesi</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus turpis vestibulum faucibus nibh.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-mark"></span>
+            <h3>Tek Tıkla Paylaşım</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt tempus leo eu aenean sed.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="showcase" id="showcase">
+        <div class="showcase-row">
+          <div class="showcase-media"></div>
+          <div class="showcase-text">
+            <p class="eyebrow">VİTRİN — 01</p>
+            <h2>Modüler Oturma Grubu</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla, et harum quidem rerum facilis est et expedita distinctio.</p>
+          </div>
+        </div>
+        <div class="showcase-row reverse">
+          <div class="showcase-media alt"></div>
+          <div class="showcase-text">
+            <p class="eyebrow">VİTRİN — 02</p>
+            <h2>Akıllı Aydınlatma Sistemi</h2>
+            <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="pricing" id="pricing">
+        <p class="eyebrow">FİYATLANDIRMA</p>
+        <h2>Sana uygun planı seç</h2>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Başlangıç</h3>
+            <p class="price">₺0<span>/ay</span></p>
+            <ul>
+              <li>3 proje</li>
+              <li>Temel materyal kütüphanesi</li>
+              <li>E-posta desteği</li>
+            </ul>
+            <a href="#" class="price-cta outline">Ücretsiz Başla</a>
+          </article>
+          <article class="price-card featured">
+            <h3>Stüdyo</h3>
+            <p class="price">₺349<span>/ay</span></p>
+            <ul>
+              <li>Sınırsız proje</li>
+              <li>Gelişmiş materyal kütüphanesi</li>
+              <li>Öncelikli destek</li>
+              <li>Takım iş birliği</li>
+            </ul>
+            <a href="#" class="price-cta">Demo İste</a>
+          </article>
+          <article class="price-card">
+            <h3>Kurumsal</h3>
+            <p class="price">Özel</p>
+            <ul>
+              <li>Özel entegrasyon</li>
+              <li>SLA garantisi</li>
+              <li>Atanmış müşteri temsilcisi</li>
+            </ul>
+            <a href="#" class="price-cta outline">Bizimle İletişime Geç</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="testimonials" id="testimonials">
+        <p class="eyebrow">YORUMLAR</p>
+        <h2>Müşterilerimiz ne diyor</h2>
+        <div class="testimonial-grid">
+          <blockquote>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus."</p>
+            <cite>— Ayşe K., İç Mimar</cite>
+          </blockquote>
+          <blockquote>
+            <p>"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla."</p>
+            <cite>— Mert D., Stüdyo Sahibi</cite>
+          </blockquote>
+          <blockquote>
+            <p>"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim."</p>
+            <cite>— Elif T., Ürün Müdürü</cite>
+          </blockquote>
+        </div>
+      </section>
+
+      <section class="final-cta">
+        <h2>Mekanını canlandırmaya hazır mısın?</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus.</p>
+        <a href="#" class="price-cta">Ücretsiz Demo İste</a>
+      </section>
+
+      <footer class="site-footer">
+        <div class="footer-grid">
+          <div>
+            <span class="nav-logo dark">ROOMSTUDIO</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div>
+            <h4>Ürün</h4>
+            <a href="#">Özellikler</a>
+            <a href="#">Fiyatlandırma</a>
+            <a href="#">Entegrasyonlar</a>
+          </div>
+          <div>
+            <h4>Şirket</h4>
+            <a href="#">Hakkımızda</a>
+            <a href="#">Kariyer</a>
+            <a href="#">İletişim</a>
+          </div>
+          <div>
+            <h4>Yasal</h4>
+            <a href="#">Gizlilik</a>
+            <a href="#">Kullanım Şartları</a>
+          </div>
+        </div>
+        <p class="copyright">© 2026 RoomStudio. Tüm hakları saklıdır.</p>
+      </footer>
+
     </main>
     <script>
       var canvas = document.querySelector("#unity-canvas");

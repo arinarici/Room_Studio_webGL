@@ -3,13 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | presentation</title>
+    <title>Unity Web Player | Room Studio</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     
     <style>
       body {
-        /* Bu CSS kodu arkada gri-beyaz kareli bir test deseni oluşturur */
         background-color: #f0f0f0 !important;
         background-image: 
           linear-gradient(45deg, #e0e0e0 25%, transparent 25%), 
@@ -19,23 +18,15 @@
         background-size: 40px 40px !important;
         background-position: 0 0, 0 20px, 20px -20px, -20px 0 !important;
       }
-      
-      /* Sayfa başlığı görünür olsun diye basit bir stil */
       .test-title {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        font-family: sans-serif;
-        color: #333;
-        z-index: 10;
-        background: rgba(255,255,255,0.8);
-        padding: 5px 10px;
-        border-radius: 4px;
+        position: absolute; top: 20px; left: 20px; font-family: sans-serif;
+        color: #333; z-index: 10; background: rgba(255,255,255,0.8);
+        padding: 5px 10px; border-radius: 4px; font-weight: bold;
       }
     </style>
   </head>
   <body>
-    <div class="test-title">Şeffaflık Test Modu: Unity arkasından bu kareleri görmelisiniz.</div>
+    <div class="test-title">Şeffaflık Testi: Arkadaki kareleri görebilmelisiniz.</div>
 
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=1920 height=1080 tabindex="-1"></canvas>
@@ -49,7 +40,7 @@
       <div id="unity-footer">
         <div id="unity-logo-title-footer"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">presentation</div>
+        <div id="unity-build-title">Room Studio Projesi</div>
       </div>
     </div>
     <script>
@@ -75,18 +66,20 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/project_test.loader.js";
+      
+      // LÜTFEN AŞAĞIDAKİ İSİMLERİ KENDİ PROJENİZİN ÇIKTI İSİMLERİYLE DEĞİŞTİRİN
+      var loaderUrl = buildUrl + "/SİZİN_PROJE_ADINIZ.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/project_test.data",
-        frameworkUrl: buildUrl + "/project_test.framework.js",
-        codeUrl: buildUrl + "/project_test.wasm",
+        dataUrl: buildUrl + "/SİZİN_PROJE_ADINIZ.data",
+        frameworkUrl: buildUrl + "/SİZİN_PROJE_ADINIZ.framework.js",
+        codeUrl: buildUrl + "/SİZİN_PROJE_ADINIZ.wasm",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "RoomStudio",
-        productName: "presentation",
-        productVersion: "0.1.0",
+        companyName: "Room Studio",
+        productName: "Presentation",
+        productVersion: "0.1",
         showBanner: unityShowBanner,
-        // WebGL Context şeffaflık tetikleyicisi
+        // ŞEFFAFLIK İÇİN EN KRİTİK KOMUT:
         webglContextAttributes: { alpha: true }
       };
 
